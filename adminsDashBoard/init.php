@@ -2,8 +2,6 @@
 
     // ====================== Routes #######################
     
-    // $css_path  = 'layout/CSS/';                  // path of CSS     
-    // $js_path   = 'layout/JS/';                    // path of JS     
     $imgs_path = 'layout/images/';
     $tmpl      = 'includes/templates/';              // path of template admin    
     $func      = 'includes/functions/';         // path of languages file

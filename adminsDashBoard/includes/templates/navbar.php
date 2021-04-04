@@ -122,6 +122,24 @@
             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
         </li>
+
+        <!-- Admin Dropdown Menu -->
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="fas fa-user-shield"></i>
+                <span class="badge badge-warning navbar-badge"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right"> 
+                <a href="#" class="dropdown-item">
+                    <i class="fas fa-user-edit mr-2"></i> Edit your data
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="logout.php" class="dropdown-item">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                </a>
+            </div>
+        </li>
+
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt"></i>
