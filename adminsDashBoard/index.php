@@ -3,6 +3,7 @@
     $noSidebar = "";
     $pageTitle = "Admin login";
         
+        session_start();
         include "init.php";
         
         if(isset($_SESSION['username'])) { 
