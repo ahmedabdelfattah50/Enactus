@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2021 at 09:01 PM
+-- Generation Time: Apr 14, 2021 at 06:01 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `college` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL
+  `name` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -57,7 +57,13 @@ CREATE TABLE `commity` (
 --
 
 INSERT INTO `commity` (`id`, `name`, `abbreviation`, `describtion`) VALUES
-(1, 'IT', 'IT', 'IT commity');
+(2, 'IT', 'IT', 'sfsdf dsfsd fsd fsd'),
+(3, 'PM', 'PM', 'fdsfsdgsafsdfsd'),
+(4, 'HR', 'HR', 'sdfsdf sdsdHR HR'),
+(5, 'Presentation', 'Presentati', 'PresentationPresentationPresentation'),
+(6, 'Media', 'Media', 'MediaMediaMediaMedia'),
+(7, 'ER', 'ER', 'ERERERERERER'),
+(8, 'Logistics', 'Logistics', 'LogisticsLogisticsLogisticsLogistics');
 
 -- --------------------------------------------------------
 
@@ -72,16 +78,16 @@ CREATE TABLE `hosters` (
   `username` varchar(50) NOT NULL,
   `email` varchar(120) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `birthdate` date NOT NULL,
+  `birthdate` varchar(10) NOT NULL,
   `mobile` varchar(11) NOT NULL,
   `photo` varchar(100) NOT NULL,
-  `commity_id` int(5) NOT NULL,
-  `season_id` int(5) NOT NULL,
-  `position_id` int(5) NOT NULL,
-  `university_id` int(5) NOT NULL,
-  `college_id` int(5) NOT NULL,
-  `college_year` varchar(5) NOT NULL,
-  `describtion` varchar(300) NOT NULL,
+  `commity_name` varchar(50) DEFAULT NULL,
+  `season_year` varchar(15) NOT NULL,
+  `position_name` varchar(50) NOT NULL,
+  `university_name` varchar(50) NOT NULL,
+  `college_name` varchar(70) NOT NULL,
+  `college_year` varchar(10) NOT NULL,
+  `about_hoster` varchar(300) NOT NULL,
   `facebook_link` varchar(150) DEFAULT NULL,
   `twitter_link` varchar(150) DEFAULT NULL,
   `instgram_link` varchar(150) DEFAULT NULL,
@@ -93,8 +99,11 @@ CREATE TABLE `hosters` (
 -- Dumping data for table `hosters`
 --
 
-INSERT INTO `hosters` (`id`, `first_name`, `last_name`, `username`, `email`, `password`, `birthdate`, `mobile`, `photo`, `commity_id`, `season_id`, `position_id`, `university_id`, `college_id`, `college_year`, `describtion`, `facebook_link`, `twitter_link`, `instgram_link`, `linkedin_link`, `admin_trust`) VALUES
-(3, 'Ahmed', 'Abdel-Fattah', 'Ahmed_Abdo', 'pro.ahmed.abdelfattah@gmail.com', '$2y$10$jDJgVOMat/q/rLWZ3KdPtefchjMjm3bzd9pT9Y1wnLZd..GxIGnEK', '1999-02-07', '01022635745', 'sfdsdfsdfsdf.jpg', 1, 1, 1, 1, 1, '4', 'sdfsdfsdfdsfsdf', NULL, NULL, NULL, NULL, 2);
+INSERT INTO `hosters` (`id`, `first_name`, `last_name`, `username`, `email`, `password`, `birthdate`, `mobile`, `photo`, `commity_name`, `season_year`, `position_name`, `university_name`, `college_name`, `college_year`, `about_hoster`, `facebook_link`, `twitter_link`, `instgram_link`, `linkedin_link`, `admin_trust`) VALUES
+(4, 'Ahmed', 'Abdel-Fattah', 'Ahmed_Abdo', 'pro.ahmed.abdelfattah@gmail.com', '$2y$10$jDJgVOMat/q/rLWZ3KdPtefchjMjm3bzd9pT9Y1wnLZd..GxIGnEK', '1999-02-07', '01022635745', 'sdfdsfdsf', NULL, '2016/2017', 'President', 'Benha', 'Computers and Artificial Intelligence', '4', 'dsfsdfsdfdsfsd', NULL, NULL, NULL, NULL, 1),
+(5, 'Ahmed', 'Abdel-Fattah', 'Ahmed_Abdo2', 'pro.ahmed.abdhgelfattah@gmail.com', '$2y$10$jDJgVOMat/q/rLWZ3KdPtefchjMjm3bzd9pT9Y1wnLZd..GxIGnEK', '1999-02-07', '01022635775', 'sdfdsfdsf', 'Logistics', '2016/2017', 'Member', 'Benha', 'Computers and Artificial Intelligence', '4', 'dsfsdfsdfdsfsd', NULL, NULL, NULL, NULL, 3),
+(6, 'Ahmed', 'Abdel-Fattah', 'Ahmed_Abdo3', 'pro.ahmed.abdhgdsdselfattah@gmail.com', '$2y$10$jDJgVOMat/q/rLWZ3KdPtefchjMjm3bzd9pT9Y1wnLZd..GxIGnEK', '1999-02-07', '01022638775', 'sdfdsfdsf', 'HR', '2016/2017', 'Head', 'Benha', 'Computers and Artificial Intelligence', '4', 'dsfsdfsdfdsfsd', NULL, NULL, NULL, NULL, 2),
+(8, 'Ahmed', 'Abdel-Fattah', 'Ahmed_Abdo4', 'pro.ahmed.abdshgdsdselfattah@gmail.com', '$2y$10$jDJgVOMat/q/rLWZ3KdPtefchjMjm3bzd9pT9Y1wnLZd..GxIGnEK', '1999-02-07', '01027638775', 'sdfdsfdsf', 'Media', '2016/2017', 'Vice Head', 'Benha', 'Computers and Artificial Intelligence', '4', 'dsfsdfsdfdsfsd', NULL, NULL, NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -112,7 +121,13 @@ CREATE TABLE `position` (
 --
 
 INSERT INTO `position` (`id`, `name`) VALUES
-(1, 'President');
+(5, 'Head'),
+(4, 'IT Manager'),
+(7, 'Member'),
+(1, 'President'),
+(3, 'Project Director'),
+(6, 'Vice Head'),
+(2, 'Vice President');
 
 -- --------------------------------------------------------
 
@@ -122,15 +137,16 @@ INSERT INTO `position` (`id`, `name`) VALUES
 
 CREATE TABLE `season` (
   `id` int(11) NOT NULL,
-  `name` varchar(15) NOT NULL
+  `year` varchar(15) NOT NULL,
+  `active_season` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `season`
 --
 
-INSERT INTO `season` (`id`, `name`) VALUES
-(1, '2016/2017');
+INSERT INTO `season` (`id`, `year`, `active_season`) VALUES
+(1, '2016/2017', 0);
 
 -- --------------------------------------------------------
 
@@ -177,11 +193,11 @@ ALTER TABLE `hosters`
   ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `mobile` (`mobile`),
-  ADD KEY `commity relationship` (`commity_id`),
-  ADD KEY `university relationship` (`university_id`),
-  ADD KEY `college relationship` (`college_id`),
-  ADD KEY `position relationship` (`position_id`),
-  ADD KEY `season relationship` (`season_id`);
+  ADD KEY `commity_name` (`commity_name`),
+  ADD KEY `season_year` (`season_year`),
+  ADD KEY `university_name` (`university_name`),
+  ADD KEY `college_name` (`college_name`),
+  ADD KEY `position_name` (`position_name`);
 
 --
 -- Indexes for table `position`
@@ -195,7 +211,7 @@ ALTER TABLE `position`
 --
 ALTER TABLE `season`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
+  ADD UNIQUE KEY `name` (`year`);
 
 --
 -- Indexes for table `university`
@@ -212,25 +228,25 @@ ALTER TABLE `university`
 -- AUTO_INCREMENT for table `college`
 --
 ALTER TABLE `college`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `commity`
 --
 ALTER TABLE `commity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `hosters`
 --
 ALTER TABLE `hosters`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `position`
 --
 ALTER TABLE `position`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `season`
@@ -252,11 +268,11 @@ ALTER TABLE `university`
 -- Constraints for table `hosters`
 --
 ALTER TABLE `hosters`
-  ADD CONSTRAINT `college relationship` FOREIGN KEY (`college_id`) REFERENCES `college` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `commity relationship` FOREIGN KEY (`commity_id`) REFERENCES `commity` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `position relationship` FOREIGN KEY (`position_id`) REFERENCES `position` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `season relationship` FOREIGN KEY (`season_id`) REFERENCES `season` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `university relationship` FOREIGN KEY (`university_id`) REFERENCES `university` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `college_name` FOREIGN KEY (`college_name`) REFERENCES `college` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `commity_name` FOREIGN KEY (`commity_name`) REFERENCES `commity` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `position_name` FOREIGN KEY (`position_name`) REFERENCES `position` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `season_year` FOREIGN KEY (`season_year`) REFERENCES `season` (`year`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `university_name` FOREIGN KEY (`university_name`) REFERENCES `university` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
