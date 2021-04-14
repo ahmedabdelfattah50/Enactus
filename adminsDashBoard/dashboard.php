@@ -1,9 +1,9 @@
 <?php 
+  $pageTitle = "Enactus Dashboard";
   session_start();
   if(isset($_SESSION['username'])) {
     include "init.php";
     $pageTitle = "Enactus Dashboard";
-   
 ?>
   <div class="wrapper">
     <!-- Preloader -->
@@ -46,7 +46,7 @@
                 <div class="icon">
                   <i class="fas fa-users"></i>
                 </div>
-                <a href="#" class="small-box-footer">Lets Go <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="hosters.php?hoster=High_Board" class="small-box-footer">Lets Go <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <div class="col-lg-3 col-6">
